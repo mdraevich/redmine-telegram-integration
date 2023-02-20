@@ -1,17 +1,17 @@
-# Telegram-Redmine automation for time tracking activity
+## Telegram-Redmine sync for time tracking activity
 
-## Motivation
+### Motivation
 Time tracking via default Redmine web interface is quite time-consuming and leads to lots of mistakes due to inavailability to edit and delete your issues or log time.
 
 That's a reason why I decided to manage my time tracking activity in smart way via Telegram Channel.
 This project is aimed to sync any data between Telegram Channel and Redmine, so you're free of routine to move data manually.
 
-## Architecture
+### Architecture
 Project consists of two Docker images:
 1. **poll_channels** is responsible for interaction with Telegram API in order to export, parse and publish channel posts.
 2. **redmine_pusher** is responsible for interaction with Redmine API in order to import data gathered from **poll_channels** HTTP endpoint.
 
-## Usage
+### Usage
 
 Follow these steps to deploy this solution:
 1. Create Telegram Channel (either private or public one). 
@@ -76,7 +76,8 @@ pipenv run python3 session_handler/main.py
 ```
 
 
-## Q&A
+### Q&A
 
 **Q:** What data is **NOT** pushed to Redmine?
+
 **A:** Data is **NOT** pushed for today; data is **NOT** pushed for the days after **MAX_DAYS** env variable; data is **NOT** pushed for the days which equal to `start_date` value for any of the last 15 issues. Other data is pushed to a newly created issue with `start_date` set to the published day of data in your Telegram Channel.
