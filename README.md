@@ -54,7 +54,7 @@ MAX_DAYS=7
 " > .env
 ```
 
-Generate configuration file that's required by **poll_channels** module based on (example.yml)[./example.yml] file and placed it in `./secrets` directory:
+Generate configuration file that's required by **poll_channels** module based on [example.yml](./example.yml) file and placed it in `./secrets` directory:
 ```shell
 # in the root of project
 
