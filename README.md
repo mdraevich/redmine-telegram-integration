@@ -21,14 +21,15 @@ Follow these steps to deploy this solution:
 
 #### Step #1: Telegram Channel message format
 
-Format depends on **poll_channels** configuration, but here's default one:
-```shell
-1) 1st line has to have two entries as \d\d:\d\d (regex), other characters are ignored
-2) 2-6 lines are parsed as description and parsed as .* (regex)
-3) any other next line is ignored
-```
+When you create your own telegram channel for time tracking, you have to follow format rules required by project to properly parse data.
 
-#### Step #2: environment and configuration files
+Parse template can be customized in **poll_channels** configuration (**template** directive), however the default one works as described:
+1. Every telegram message is an atomic unit of your activity and it's parsed line by line
+2. 1st line has to contain two entries of regex `\d\d:\d\d`, other chars are ignored
+3. 2-6 lines are parsed as description using regex `.*`
+4. 7+ lines are not parsed and totally ignored
+
+#### Step #2: create environment and configuration files
 Generate an environment file that's required by Docker Compose:
 ```
 # in the root of project
