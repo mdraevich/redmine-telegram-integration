@@ -78,6 +78,6 @@ pipenv run python3 session_handler/main.py
 
 ### Q&A
 
-**Q:** What data is **NOT** pushed to Redmine?
+**Q:** What data is pushed to Redmine?
 
 **A:** Data is **NOT** pushed for today; data is **NOT** pushed for the days after **MAX_DAYS** env variable; data is **NOT** pushed for the days which equal to `start_date` value for any of the last 15 issues. Other data is pushed to a newly created issue with `start_date` set to the published day of data in your Telegram Channel.
