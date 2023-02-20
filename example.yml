@@ -1,11 +1,20 @@
 channels:
 
   - name:                 # friendly name for channel
-    channel_id:           # url for channel
-    polling_interval:     # how often to poll channel
+    channel_id:           # url for your channel (paste link of your channel)
+    polling_interval:     # how often to poll channel, set to more than 1 hour
     message_limit:        # how much messages returns
     template:             # template dict describe list of regex, each regex is matched against appropriate line
-      - "^.*$"            # so 1st regex is matched against 1st line of message, 2nd regex against 2nd line, etc.
-      - "[^\/-]+"         # if message lines is less than regex amount then should return empty list for matches
-    tags:                 # dict of custom tags
-      private: false      # private tag is responsible to determine whether to show channel in public list or not
+      - "\\d\\d:\\d\\d"
+      - "^.*$"
+      - "^.*$"
+      - "^.*$"
+      - "^.*$"
+      - "^.*$"
+    tags:                 # dict of custom tags (some of them are required for redmine-pusher)
+      user_id: 36         # your user_id, execute HTTP GET /issues.json?status_id=*
+      status_id: 2        # status_id for issue, execute HTTP GET /issues.json?status_id=*
+      project_id: 25      # project_id for time tracking, execute HTTP GET /projects.json
+      tracker_id: 2       # tracker_id for issue, execute HTTP GET /trackers.json
+      priority_id: 2      # priority_id for issue, see https://www.redmine.org/projects/redmine/wiki/Rest_Enumerations
+      activity_id: 4      # activity_id for issue, see https://www.redmine.org/projects/redmine/wiki/Rest_Enumerations

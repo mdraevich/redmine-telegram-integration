@@ -10,7 +10,7 @@ RUN pipenv lock -r -d > requirements.txt
 
 FROM python:3.8.15-buster
 LABEL MAINTAINER=github.com/mdraevich
-LABEL SERVICE=bot_handler
+LABEL SERVICE=redmine_pusher
 
 WORKDIR /listen_and_repeat_bot
 
@@ -19,4 +19,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD ["python3", "main.py"]
+CMD ["python3", "main.py", "2>&1"]

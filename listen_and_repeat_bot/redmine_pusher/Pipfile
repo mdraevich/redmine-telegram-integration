@@ -4,11 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-python-telegram-bot = "*"
-pyyaml = "*"
+python-redmine = "*"
 
 [dev-packages]
-pytest = "*"
 pylint = "*"
 
 [requires]
