@@ -80,9 +80,11 @@ pipenv run python3 session_handler/main.py
 ### Screenshots
 
 Messages in Telegram Channel:
+
 ![telegram-published-message](./images/telegram_message.png)
 
 Created issue with imported messages in Redmine:
+
 ![redmine-issue](./images/redmine_issue.png)
 
 ### Q&A
@@ -92,6 +94,9 @@ Created issue with imported messages in Redmine:
 
 **A:**
 > Data is **NOT** pushed if published today.
+> 
 > Data is **NOT** pushed if published after `MAX_DAYS` from today.
+> 
 > Data is **NOT** pushed if published day is equal to `start_date` value for any of the last 15 issues in your `project_id`.
+> 
 > Any other data is pushed to a newly created issue with `start_date` set to the published day.
