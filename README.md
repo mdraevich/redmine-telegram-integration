@@ -38,6 +38,7 @@ echo "
 COMPOSE_PROJECT_NAME=redmine-integration
 PYTHONPATH=.
 TZ=Europe/Minsk
+LOGLEVEL=INFO
 
 # poll channels
 SESSION_NAME=redmine-integration
