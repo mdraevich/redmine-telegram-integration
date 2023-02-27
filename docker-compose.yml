@@ -12,6 +12,7 @@ services:
       REDMINE_API_KEY: ${REDMINE_API_KEY}
       MAX_DAYS: ${MAX_DAYS}
       LOGLEVEL: ${LOGLEVEL}
+      POLL_INTERVAL: ${POLL_INTERVAL}
     networks:
       internal-network:
 
