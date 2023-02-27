@@ -90,10 +90,10 @@ Created issue with imported messages in Redmine:
 
 ### Q&A
 
-**Q:** 
+**Question:** 
 > What data is pushed to Redmine?
 
-**A:**
+**Answer:**
 > Data is **NOT** pushed if published today.
 > 
 > Data is **NOT** pushed if published after `MAX_DAYS` from today.
@@ -101,3 +101,17 @@ Created issue with imported messages in Redmine:
 > Data is **NOT** pushed if published day is equal to `start_date` value for any of the last 15 issues in your `project_id`.
 > 
 > Any other data is pushed to a newly created issue with `start_date` set to the published day.
+
+
+**Question:**
+> When data is pushed?
+
+**Answer:**
+> From 10:00 until 23:59 according to your system time. 
+
+
+**Question:**
+> How often **redmine_pusher** checks for new data to be pushed?
+
+**A:**
+> Every 30 minutes, but can be overrided by setting environment variable `POLL_INTERVAL` in seconds.

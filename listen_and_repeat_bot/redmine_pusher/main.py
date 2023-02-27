@@ -126,7 +126,16 @@ if __name__ == '__main__':
     max_days = int(os.environ.get("MAX_DAYS", "7"))
     poll_interval = int(os.environ.get("POLL_INTERVAL", "1800"))
 
+    logger.info("Started endless polling for data to be pushed, "
+                "poll_interval=%s", poll_interval)
     while True:
+        time.sleep(poll_interval)
+
+        if datetime.datetime.now().hour < 10:
+            # do not push data at night, because you may still be working
+            logger.info("It's earlier than 10:00, skip pushing any data")
+            continue
+
         success, data_obj = get_channel_data()
         if success:
             logger.info("Success to retrieve data, try to format it")
@@ -212,4 +221,3 @@ if __name__ == '__main__':
                                 description=event["job_description"])
         else:
             logger.error("Failed to retrieve data")
-        time.sleep(poll_interval)
