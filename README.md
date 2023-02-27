@@ -90,28 +90,21 @@ Created issue with imported messages in Redmine:
 
 ### Q&A
 
-**Question:** 
-> What data is pushed to Redmine?
 
-**Answer:**
-> Data is **NOT** pushed if published today.
-> 
-> Data is **NOT** pushed if published after `MAX_DAYS` from today.
-> 
-> Data is **NOT** pushed if published day is equal to `start_date` value for any of the last 15 issues in your `project_id`.
-> 
-> Any other data is pushed to a newly created issue with `start_date` set to the published day.
+###### What data is pushed to Redmine?
 
+Rules to determine whether data should be pushed are as follows:
+- Data is **NOT** pushed if published today.
+- Data is **NOT** pushed if published after `MAX_DAYS` from today.
+- Data is **NOT** pushed if published day is equal to `start_date` value for any of the last 15 issues in your `project_id`.
+- Any other data is pushed to a newly created issue with `start_date` set to the published day.
 
-**Question:**
-> When data is pushed?
+###### When data is pushed?
 
-**Answer:**
-> From 10:00 until 23:59 according to your system time. 
+From **10:00** until **23:59** according to your system time. 
 
 
-**Question:**
-> How often **redmine_pusher** checks for new data to be pushed?
+###### How often it checks whether new data is available and has to be pushed?
 
-**A:**
-> Every 30 minutes, but can be overrided by setting environment variable `POLL_INTERVAL` in seconds.
+- **poll_channels** reads Telegram channel every 30 minutes by default, but it can be overrided by setting `polling_interval` (in seconds) via `config.yml`.
+- **redmine_pusher** checks for new data every 30 minutes, but can be overrided by setting  `POLL_INTERVAL` (in seconds) via environment variable.
