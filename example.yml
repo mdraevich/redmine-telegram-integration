@@ -12,9 +12,9 @@ channels:
       - "^.*$"
       - "^.*$"
     tags:                 # dict of custom tags (some of them are required for redmine-pusher)
-      user_id: 36         # your user_id, execute HTTP GET /issues.json?status_id=*
-      status_id: 2        # status_id for issue, execute HTTP GET /issues.json?status_id=*
-      project_id: 25      # project_id for time tracking, execute HTTP GET /projects.json
-      tracker_id: 2       # tracker_id for issue, execute HTTP GET /trackers.json
-      priority_id: 2      # priority_id for issue, see https://www.redmine.org/projects/redmine/wiki/Rest_Enumerations
-      activity_id: 4      # activity_id for issue, see https://www.redmine.org/projects/redmine/wiki/Rest_Enumerations
+      user_id: 1          # your user_id, execute HTTP GET /issues.json?status_id=*
+      status_id: 1        # status_id for issue, execute HTTP GET /issues.json?status_id=*
+      project_id: 1       # project_id for time tracking, execute HTTP GET /projects.json
+      tracker_id: 1       # tracker_id for issue, execute HTTP GET /trackers.json
+      priority_id: 1      # priority_id for issue, see https://www.redmine.org/projects/redmine/wiki/Rest_Enumerations
+      activity_id: 1      # activity_id for issue, see https://www.redmine.org/projects/redmine/wiki/Rest_Enumerations
