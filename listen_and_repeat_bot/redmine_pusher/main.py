@@ -124,6 +124,7 @@ if __name__ == '__main__':
     redmine_password = os.environ.get("REDMINE_PASSWORD", "")
     redmine_api_key = os.environ.get("REDMINE_API_KEY", "")
     max_days = int(os.environ.get("MAX_DAYS", "7"))
+    poll_interval = int(os.environ.get("POLL_INTERVAL", "1800"))
 
     while True:
         success, data_obj = get_channel_data()
@@ -211,4 +212,4 @@ if __name__ == '__main__':
                                 description=event["job_description"])
         else:
             logger.error("Failed to retrieve data")
-        time.sleep(60 * 15)
+        time.sleep(poll_interval)
