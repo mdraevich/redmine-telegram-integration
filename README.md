@@ -91,7 +91,7 @@ Created issue with imported messages in Redmine:
 ### Q&A
 
 
-##### What data is pushed to Redmine?
+#### What data is pushed to Redmine?
 
 Rules to determine whether data should be pushed are as follows:
 - Data is **NOT** pushed if published today.
@@ -99,12 +99,12 @@ Rules to determine whether data should be pushed are as follows:
 - Data is **NOT** pushed if published day is equal to `start_date` value for any of the last 15 issues in your `project_id`.
 - Any other data is pushed to a newly created issue with `start_date` set to the published day.
 
-##### When data is pushed?
+#### When data is pushed?
 
 From **10:00** until **23:59** according to your system time. 
 
 
-##### How often it checks whether new data is available and has to be pushed?
+#### How often it checks whether new data is available and has to be pushed?
 
 - **poll_channels** reads Telegram channel every 30 minutes by default, but it can be overrided by setting `polling_interval` (in seconds) via `config.yml`.
 - **redmine_pusher** checks for new data every 30 minutes, but can be overrided by setting  `POLL_INTERVAL` (in seconds) via environment variable.
