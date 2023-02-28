@@ -131,9 +131,10 @@ if __name__ == '__main__':
     while True:
         time.sleep(poll_interval)
 
-        if datetime.datetime.now().hour < 10:
-            # do not push data at night, because you may still be working
-            logger.info("It's earlier than 10:00, skip pushing any data")
+        if datetime.datetime.now().hour < 14:
+            # do not push data at night and early morning,
+            # because you may still be working
+            logger.info("It's earlier than 14:00, skip pushing any data")
             continue
 
         success, data_obj = get_channel_data()

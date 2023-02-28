@@ -101,7 +101,7 @@ Rules to determine whether data should be pushed are as follows:
 
 #### When data is pushed?
 
-From **10:00** until **23:59** according to your system time. 
+From **14:00** until **23:59** according to your system time. 
 
 
 #### How often it checks whether new data is available and has to be pushed?
