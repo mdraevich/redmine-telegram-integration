@@ -4,6 +4,7 @@ services:
     build:
       context: ./listen_and_repeat_bot/redmine_pusher
     restart: always
+    init: true
     environment:
       PYTHONPATH: .
       TZ: ${TZ}
@@ -20,6 +21,7 @@ services:
     build:
       context: ./listen_and_repeat_bot/poll_channels
     restart: always
+    init: true
     environment:
       PYTHONPATH: .
       TZ: ${TZ}
