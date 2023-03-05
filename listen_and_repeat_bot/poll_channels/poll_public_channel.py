@@ -75,8 +75,8 @@ class PollPublicChannel():
         except (ConnectionError, errors.FloodWaitError) as exc:
 
             if isinstance(exc, ConnectionError):
-                self.logger.error("Network conntection Error, "
-                                  "no messages received")
+                self.logger.exception("Network connection Error, "
+                                      "no messages received")
                 return (1,)
 
             if isinstance(exc, errors.FloodWaitError):
