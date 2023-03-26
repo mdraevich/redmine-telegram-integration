@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      - add-new-workflows
-
 
 jobs:
 
@@ -22,14 +20,12 @@ jobs:
           cache: pipenv
       - run: pip install pipenv
 
-      - name: prepare poll_channels
-        working-directory: ./listen_and_repeat_bot/poll_channels
+      - name: install pylint
         run: |
           pipenv install --dev
-          pipenv run pylint *.py
 
-      - name: prepare bot_handler
-        working-directory: ./listen_and_repeat_bot/bot_handler
+      - name: check modules
         run: |
-          pipenv install --dev
-          pipenv run pylint *.py
+          pipenv run pylint ./listen_and_repeat_bot/redmine_pusher
+          pipenv run pylint ./listen_and_repeat_bot/poll_channels
+          pipenv run pylint ./session_handler
