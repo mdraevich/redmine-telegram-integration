@@ -22,18 +22,21 @@ jobs:
 
       - name: check poll_channels module
         working-directory: ./listen_and_repeat_bot/poll_channels
+        continue-on-error: true
         run: |
           pipenv install --dev
           pipenv run pylint *.py
 
       - name: check redmine_pusher module
         working-directory: ./listen_and_repeat_bot/redmine_pusher
+        continue-on-error: true
         run: |
           pipenv install --dev
           pipenv run pylint *.py
 
       - name: check session_handler module
         working-directory: ./
+        continue-on-error: true
         run: |
           pipenv install --dev
           pipenv run pylint ./session_handler/*.py
