@@ -88,8 +88,11 @@ Created issue with imported messages in Redmine:
 
 ![redmine-issue](./images/redmine_issue.png)
 
-### Q&A
+### Upstream project
 
+Pay attention that `./session_handler` and `./listen_and_repeat_bot/poll_channels` are part of [Listen & Repeat](https://github.com/mdraevich/listen_and_repeat_bot) project.
+
+### Q&A
 
 #### What data is pushed to Redmine?
 
