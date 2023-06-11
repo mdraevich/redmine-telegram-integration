@@ -92,6 +92,15 @@ Created issue with imported messages in Redmine:
 
 Pay attention that `./session_handler` and `./listen_and_repeat_bot/poll_channels` are part of [Listen & Repeat](https://github.com/mdraevich/listen_and_repeat_bot) project.
 
+To keep up-to-date execute the following:
+```
+git remote add upstream git@github.com:mdraevich/listen_and_repeat_bot.git
+git fetch
+git checkout upstream/main -- ./listen_and_repeat_bot/poll_channels
+git checkout upstream/main -- ./session_handler
+
+```
+
 ### Q&A
 
 #### What data is pushed to Redmine?
